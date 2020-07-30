@@ -10,21 +10,14 @@ export default function Start({ setScreen }) {
   };
   return (
     <View style={styles.container2}>
-      <View style={styles.billy}>
+      <View style={styles.card}>
         <Image
-          style={styles.png}
-          source={require("../Components/billy.png")}
-          alt="svg2"
+          style={styles.png2}
+          source={require("../Components/b.png")}
+          alt="png1"
         />
-        <View style={styles.card}>
-          <Image
-            style={styles.png2}
-            source={require("../Components/bored.png")}
-            alt="png1"
-          />
-          <Text style={styles.text1}>I am bored...</Text>
-          <Text style={styles.text1}>Can you find me something to do ...</Text>
-        </View>
+        <Text style={styles.text1}>I am bored...</Text>
+        <Text style={styles.text1}>Can you find me something to do ...</Text>
       </View>
       <View>
         <TouchableOpacity
@@ -88,17 +81,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26,
     backgroundColor: Color.c4,
   },
-  billy: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
+
   card: {
-    width: "60%",
-    marginRight: 20,
-    marginVertical: 50,
+    width: "80%",
+
+    marginVertical: 30,
     alignItems: "center",
-    height: 200,
+    height: 300,
     justifyContent: "center",
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 10,
@@ -112,8 +101,8 @@ const styles = StyleSheet.create({
     width: 140,
   },
   png2: {
-    height: 50,
-    width: 50,
+    height: 110,
+    width: 110,
     marginBottom: 20,
   },
   png3: {

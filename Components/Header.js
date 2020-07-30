@@ -1,10 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import Color from "./Color";
 const Header = (props) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitle}>{props.title}</Text>
+      <Image
+        style={styles.png3}
+        source={require("../Components/pomeranian.png")}
+        alt="png1"
+      />
     </View>
   );
 };
@@ -17,15 +22,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 16,
+    shadowRadius: 10,
     shadowOpacity: 0.26,
     backgroundColor: Color.c4,
+    flexDirection: "row",
   },
   headerTitle: {
     color: Color.c2,
     fontSize: 24,
     fontWeight: "bold",
     fontFamily: "Cochin",
+    textShadowColor: Color.c1,
+    textShadowOffset: { width: 2, height: 1 },
+    textShadowRadius: 10,
+  },
+  png3: {
+    height: 40,
+    width: 40,
+    marginHorizontal: 15,
   },
 });
 export default Header;
