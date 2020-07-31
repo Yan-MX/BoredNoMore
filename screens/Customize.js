@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 import Color from "../Components/Color";
+
 const Customize = ({ setScreen }) => {
   return (
     <View style={styles.container}>
