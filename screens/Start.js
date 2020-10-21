@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import Color from "../Components/Color";
 export default function Start({ setScreen }) {

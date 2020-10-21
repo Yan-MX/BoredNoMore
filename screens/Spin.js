@@ -28,7 +28,6 @@ let getWinnerIndex = () => {
   return Math.floor(deg / angleBySegment);
 };
 const makeWheel = () => {
-  console.log("makeWheel is called");
   const data2 = [
     { number: 1, name: "Locke" },
     { number: 1, name: "Reyes" },
@@ -67,8 +66,6 @@ const makeWheel = () => {
 };
 let wheel = makeWheel();
 const renderSvgWheel = () => {
-  console.log("renderSvgWheel is called");
-
   return (
     <View>
       <Animated.View
@@ -133,33 +130,10 @@ const a = () => {
     );
   });
 };
-const data = [
-  "Why not take a nap?",
-  "Why not watch a movie?",
-  "Why not take a long bath or shower?",
-  "How about a walk in the nearby park?",
-  "Why not contact a friend whom you haven't spoken to in a long time?",
-  "Why not play some silly games?",
-  "why not learn a new language?",
-  "How about paint your nail or braid your hair?",
-  "How about have a tea?",
-  "How about listening to some podcast?",
-];
-const info = [
-  "Power Napping is the best",
-  "An old movie!!",
-  "Treat yourself, you deserve it",
-  "Get some fresh air!",
-  "Catch up with him or her",
-  "How about the snake game?",
-  "mmm try Doulingo?",
-  "Look fantastic",
-  "Nice and Warm",
-  "Get some inspirations!",
-];
-const Spin = (props) => {
+const Spin = ({ setScreen, data }) => {
   let delayInMilliseconds = 4000;
   let RandomNum;
+  let size = data.length;
   let onPan = ({ nativeEvent }) => {
     if (nativeEvent.state == State.END) {
       const { velocityY } = nativeEvent;
@@ -170,11 +144,13 @@ const Spin = (props) => {
       }).start(() => {
         //do sth here
       });
-      RandomNum = Math.floor(Math.random() * 10);
+
+      RandomNum = Math.floor(Math.random() * size);
+
       setTimeout(function () {
         Alert.alert(
-          data[RandomNum],
-          info[RandomNum],
+          data[RandomNum].text,
+          "",
           [
             {
               text: "OK",
@@ -198,7 +174,7 @@ const Spin = (props) => {
       <View style={styles.button}>
         <RNButton
           color={Color.c2}
-          onPress={() => props.setScreen(1)}
+          onPress={() => setScreen(1)}
           title="back"
         ></RNButton>
       </View>

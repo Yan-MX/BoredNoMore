@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     fontFamily: "Cochin",
-    textShadowColor: Color.c1,
+    textShadowColor: Color.c5,
     textShadowOffset: { width: 2, height: 1 },
     textShadowRadius: 10,
   },
