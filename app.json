@@ -1,21 +1,20 @@
 {
   "expo": {
-    "name": "BoredNoMore",
+    "name": "Bored No More",
     "slug": "BoredNoMore",
     "version": "1.0.0",
+    "sdkVersion": "38.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./Components/b.png",
+
+    "description": "A simple app to offer you some ideas of what to do when you feel bored at home. Enjoy! You need to have expo app on your phone first and then scan the QR code on the right to open. To download the expo app, simply scroll down, there is a link at the right bottom of the page. ",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./Components/bored.png"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

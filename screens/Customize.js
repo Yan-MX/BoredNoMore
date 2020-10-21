@@ -5,7 +5,7 @@ import Color from "../Components/Color";
 const Customize = ({ setScreen }) => {
   return (
     <View style={styles.container}>
-      <Text>Customize</Text>
+      <Text>This part is still under construction :)</Text>
       <View style={styles.button}>
         <Button
           color={Color.c1}

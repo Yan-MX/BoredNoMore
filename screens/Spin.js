@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import Svg, { G, Path, Text, TSpan } from "react-native-svg";
-
 import * as GestureHandler from "react-native-gesture-handler";
 import * as d3Shape from "d3-shape";
 import color from "randomcolor";
-import { snap, angle } from "@popmotion/popcorn";
 const { PanGestureHandler, State } = GestureHandler;
-
 import {
   Alert,
   StyleSheet,
@@ -32,7 +29,6 @@ let getWinnerIndex = () => {
 };
 const makeWheel = () => {
   console.log("makeWheel is called");
-  const data = Array.from({ length: numberOfSegments }).fill(1);
   const data2 = [
     { number: 1, name: "Locke" },
     { number: 1, name: "Reyes" },
@@ -48,10 +44,6 @@ const makeWheel = () => {
   //const arcs = d3Shape.pie()(data);
   const arcs = d3Shape.pie().value(function (d) {
     return d.number;
-  })(data2);
-
-  const arcs2 = d3Shape.pie().value(function (d) {
-    return d.name;
   })(data2);
 
   const colors = color({
@@ -141,10 +133,33 @@ const a = () => {
     );
   });
 };
+const data = [
+  "Why not take a nap?",
+  "Why not watch a movie?",
+  "Why not take a long bath or shower?",
+  "How about a walk in the nearby park?",
+  "Why not contact a friend whom you haven't spoken to in a long time?",
+  "Why not play some silly games?",
+  "why not learn a new language?",
+  "How about paint your nail or braid your hair?",
+  "How about have a tea?",
+  "How about listening to some podcast?",
+];
+const info = [
+  "Power Napping is the best",
+  "An old movie!!",
+  "Treat yourself, you deserve it",
+  "Get some fresh air!",
+  "Catch up with him or her",
+  "How about the snake game?",
+  "mmm try Doulingo?",
+  "Look fantastic",
+  "Nice and Warm",
+  "Get some inspirations!",
+];
 const Spin = (props) => {
-  const [complete, setComplete] = useState(false);
   let delayInMilliseconds = 4000;
-  let num = 0;
+  let RandomNum;
   let onPan = ({ nativeEvent }) => {
     if (nativeEvent.state == State.END) {
       const { velocityY } = nativeEvent;
@@ -155,37 +170,20 @@ const Spin = (props) => {
       }).start(() => {
         //do sth here
       });
-      if (num === 0) {
-        setTimeout(function () {
-          Alert.alert(
-            "Since you are bored...",
-            "Why not take a bath or a long shower????",
-            [
-              {
-                text: "OK",
-                onPress: () => console.log("OK Pressed"),
-              },
-            ],
-            { cancelable: false }
-          );
-          num++;
-        }, delayInMilliseconds);
-      } else {
-        setTimeout(function () {
-          Alert.alert(
-            "Since you are bored...",
-            "Why not take a nap????",
-            [
-              {
-                text: "OK",
-                onPress: () => console.log("OK Pressed"),
-              },
-            ],
-            { cancelable: false }
-          );
-          num++;
-        }, delayInMilliseconds);
-      }
+      RandomNum = Math.floor(Math.random() * 10);
+      setTimeout(function () {
+        Alert.alert(
+          data[RandomNum],
+          info[RandomNum],
+          [
+            {
+              text: "OK",
+              onPress: () => console.log("OK Pressed"),
+            },
+          ],
+          { cancelable: false }
+        );
+      }, delayInMilliseconds);
     }
   };
 

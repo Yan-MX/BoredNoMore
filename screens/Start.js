@@ -8,6 +8,7 @@ export default function Start({ setScreen }) {
   const pressHandler2 = () => {
     setScreen(3);
   };
+
   return (
     <View style={styles.container2}>
       <View style={styles.card}>
